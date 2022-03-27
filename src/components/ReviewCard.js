@@ -4,7 +4,7 @@ export default function ReviewCard({ review, refreshReviews }) {
   const archiveReview = async () => {
     review.archived = true;
     try {
-      await fetch("api/updateReview", {
+      await fetch("/.netlify/functions/updateReview", {
         method: "PUT",
         body: JSON.stringify(review),
       });
@@ -17,7 +17,7 @@ export default function ReviewCard({ review, refreshReviews }) {
   const deleteReview = async () => {
     const id = review._id;
     try {
-      await fetch("api/deleteReview", {
+      await fetch("/.netlify/functions/deleteReview", {
         method: "DELETE",
         body: JSON.stringify({ id }),
       });

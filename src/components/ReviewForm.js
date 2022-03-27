@@ -15,7 +15,7 @@ export default function ReviewForm(refreshReviews) {
     e.preventDefault();
     const body = { name, url, description };
     try {
-      const res = await fetch("/api/createReview", {
+      const res = await fetch("/.netlify/functions/createReview", {
         method: "POST",
         body: JSON.stringify(body),
       });
