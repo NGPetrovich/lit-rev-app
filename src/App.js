@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import ReviewForm from "./components/ReviewForm";
+import ReviewList from "./components/ReviewList";
 
 function App() {
+  const [reviews, setReviews] = useState([]);
+
+  const loadReviews = async () => {
+    try {
+      const res = await fetch("/api/getReviews");
+      const reviews = await res.json();
+      setReviews(reviews);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    loadReviews();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container py-5">
+      <h1 className="text-center mb-5">Literature Review</h1>
+      <ReviewForm refreshReviews={loadReviews} />
+      <ReviewList reviews={reviews} refreshReviews={loadReviews} />
     </div>
   );
 }
