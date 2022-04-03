@@ -1,32 +1,32 @@
 import React from "react";
-import ReviewCard from "./ReviewCard";
+import Review from "./Review";
 
 export default function ReviewList({ reviews, refreshReviews }) {
   return (
     <div>
-      <h2 className="my-4">Reviews</h2>
-      {reviews &&
-        reviews
-          .filter((review) => !review.archived)
+      <h2 className="mt-5 mb-3">Reviews</h2>
+      <div className="list-group">
+        {reviews
+          .filter((review) => !review.finished)
           .map((review) => (
-            <ReviewCard
-              key={review._id}
+            <Review
+              key={review.id}
               review={review}
               refreshReviews={refreshReviews}
             />
           ))}
+      </div>
 
-      <h2 className="my-4">Archived</h2>
-      {reviews &&
-        reviews
-          .filter((review) => review.archived)
-          .map((review) => (
-            <ReviewCard
-              key={review._id}
-              review={review}
-              refreshReviews={refreshReviews}
-            />
-          ))}
+      <h2 className="my-5 mb-3">Completed:</h2>
+      {reviews
+        .filter((review) => review.finished)
+        .map((review) => (
+          <Review
+            key={review.id}
+            review={review}
+            refreshReviews={refreshReviews}
+          />
+        ))}
     </div>
   );
 }
