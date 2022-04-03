@@ -1,64 +1,53 @@
 import React, { useState } from "react";
+import Tags from "./Tags";
 
-export default function ReviewForm(refreshReviews) {
+export default function ReviewForm({ reviewAdded }) {
   const [name, setName] = useState("");
-  const [url, setURL] = useState("");
-  const [description, setDescription] = useState("");
+  const [link, setLink] = useState("");
+  const [tags, setTags] = useState([]);
+  const [count, setCount] = useState(0);
 
   const resetForm = () => {
     setName("");
-    setURL("");
-    setDescription("");
+    setLink("");
+    setCount(count + 1);
   };
 
-  const handleSubmit = async (e) => {
+  const submitReview = async (e) => {
     e.preventDefault();
-    const body = { name, url, description };
-    try {
-      const res = await fetch("/.netlify/functions/createReview", {
-        method: "POST",
-        body: JSON.stringify(body),
-      });
-      resetForm();
-      refreshReviews();
-    } catch (error) {
-      console.error(error);
-    }
+
+    resetForm();
+    reviewAdded();
   };
 
   return (
     <div className="card">
-      <div className="card-header">Add Review</div>
+      <div className="card-header">Add a new review:</div>
       <div className="card-body">
-        <form onSubmit={handleSubmit}>
+        <form className="" onSubmit={submitReview}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
               type="text"
               name="name"
-              className="form-control"
               value={name}
+              className="form-control"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="url">Reference</label>
+            <label htmlFor="link">Reference</label>
             <input
               type="text"
-              name="url"
+              name="link"
+              value={link}
               className="form-control"
-              value={url}
-              onChange={(e) => setURL(e.target.value)}
+              onChange={(e) => setLink(e.target.value)}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="description">Citations and Key Points</label>
-            <input
-              name="description"
-              className="form-control"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
+            <p>Tags</p>
+            <Tags tagsUpdated={setTags} key={count} />
           </div>
           <button type="submit" className="btn btn-primary">
             Submit
