@@ -7,7 +7,7 @@ function App() {
 
   const loadReviews = async () => {
     try {
-      const res = await fetch("/api/reviews");
+      const res = await fetch("/.netlify/functions/reviews");
       const reviews = await res.json();
       setReviews(reviews);
     } catch (err) {

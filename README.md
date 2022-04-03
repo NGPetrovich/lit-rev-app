@@ -9,4 +9,4 @@ Ultimate goal of this project is to keep this app showing the 3 things:
   <li>3. List of materials that I've read already.</li>
 </ol>
 
-<a href="https://moonlit-flan-c1c183.netlify.app">Link to my deployed literature review app.</a>
+<a href="https://literature-review.netlify.app">Link to my deployed literature review app.</a>

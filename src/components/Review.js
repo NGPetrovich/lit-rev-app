@@ -11,7 +11,7 @@ export default function Review({ review, refreshReviews }) {
 
   const markReviewFinished = async () => {
     try {
-      await fetch("/api/reviews", {
+      await fetch("/.netlify/functions/reviews", {
         method: "PUT",
         body: JSON.stringify({ ...review, finished: true }),
       });
@@ -22,7 +22,7 @@ export default function Review({ review, refreshReviews }) {
   };
   const deleteReview = async () => {
     try {
-      fetch("/api/reviews", {
+      fetch("/.netlify/functions/reviews", {
         method: "DELETE",
         body: JSON.stringify({ id: review.id }),
       });

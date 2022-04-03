@@ -17,7 +17,7 @@ export default function ReviewForm({ reviewAdded }) {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/reviews", {
+      const res = await fetch("/.netlify/functions/reviews", {
         method: "POST",
         body: JSON.stringify({ name, author, tags }),
       });
