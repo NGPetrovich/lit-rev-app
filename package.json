@@ -1,0 +1,23 @@
+{
+  "name": "lit-rev-app",
+  "version": "2.0.0",
+  "description": "blog made with 11ty for literature reviews",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NGPetrovich/lit-rev-app.git"
+  },
+  "author": "Nikita Goncharenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NGPetrovich/lit-rev-app/issues"
+  },
+  "homepage": "https://github.com/NGPetrovich/lit-rev-app#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  }
+}
