@@ -194,7 +194,7 @@ section,
   /////////////////////// */
 
 .page-header {
-  padding: 4em 0em 0em 0em;
+  padding: 2em 0em 0em 0em;
 }
 
 .page-header__content {
@@ -204,7 +204,7 @@ section,
 
 .nav-list {
   margin: 0;
-  padding: 0 2em 0 0;
+  padding: 0 1em 0 0;
 }
 
 .nav-list a {
