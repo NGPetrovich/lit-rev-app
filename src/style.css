@@ -15,7 +15,7 @@
   --clr-primary-200: rgb(251, 251, 233);
   --clr-primary-300: rgb(199, 189, 0);
   --clr-primary-400: rgb(229, 184, 11);
-  --clr-primary-500: rgb(133, 113, 15);
+  --clr-primary-500: rgb(212, 175, 55);
 
   --clr-neutral-100: hsla(0, 0%, 100%, 1);
   --clr-neutral-300: hsla(0, 0%, 50%, 1);
@@ -139,7 +139,7 @@ strong {
 
 section,
 .section {
-  padding: min(10vh, 10em) 0;
+  padding: min(4vh, 10em) 0;
 }
 
 /* //////////////////////
@@ -194,7 +194,7 @@ section,
   /////////////////////// */
 
 .page-header {
-  padding: 2em 0;
+  padding: 4em 0em 0em 0em;
 }
 
 .page-header__content {
@@ -204,7 +204,7 @@ section,
 
 .nav-list {
   margin: 0;
-  padding: 0;
+  padding: 0 2em 0 0;
 }
 
 .nav-list a {
