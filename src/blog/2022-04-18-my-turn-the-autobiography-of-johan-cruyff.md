@@ -1,5 +1,5 @@
 ---
-title: "My Turn: The Autobiography of Johan Cruyff"
+title: 'Book Review: "My Turn: The Autobiography"'
 description: "The author of the book: Johan Cruyff"
 author: Nikita Goncharenko
 date: 2022-04-18T16:35:14.891Z
