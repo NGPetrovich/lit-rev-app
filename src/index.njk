@@ -8,11 +8,11 @@ layout: 'base.njk'
   <div class="container flow">
       <div class="hero__content flow">
         <h1 class="section-title">Literature Review</h1>
-        <p>Here, I will be publishing reviews of articles, books, and other reading materials I am reading.</p>
-        <p>Also, feel free to check out my future literature list, as well as online library I keep to track my progress.</p>
+        <p>Hey there! This is the space where I will be publishing reviews of articles, books, and other reading materials.</p>
+        <p>Also, feel free to check out the list of future reading materials.</p>
         <div class="flex-group">
-          <a href="#featured-articles" class="btn btn--primary">Materials I recommend</a>
-          <a href="./reviews" class="btn btn--neutral">All reviews</a>
+          <a href="./reviews" class="btn btn--primary">Read My Reviews</a>
+          <a href="#featured-articles" class="btn btn--neutral">Future Reads</a>
         </div>
       </div>
       <div>
@@ -23,8 +23,8 @@ layout: 'base.njk'
 
 <section id="featured-articles" class="featured-articles">
   <div class="container flow">
-    <h2 class="section-title text-center ">Featured articles</h2>
-    <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
+    <h2 class="section-title text-center ">Upcoming Reviews</h2>
+    <p class="text-center">Reviews I am about to write one day when I collect my thoughts together.</p>
     <ul role="list" class="articles__list flow">
       {%- for post in collections.featured | reverse-%}
       {% include 'review-snippet.njk' %}

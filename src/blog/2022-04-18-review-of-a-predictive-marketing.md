@@ -8,4 +8,3 @@ tags:
 image: /assets/blog/predictive-marketing.jpeg
 imageAlt: "     "
 ---
-\
